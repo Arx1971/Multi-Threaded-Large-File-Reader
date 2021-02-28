@@ -1,6 +1,6 @@
 package com.large.file;
 
-import com.large.file.cutomfilewriter.FileProcessor;
+import com.large.file.cutomfilewriter.FileWriterProcessor;
 import com.large.file.filereader.FileNameReader;
 import com.large.file.filereader.FileTransformProcessor;
 
@@ -15,8 +15,8 @@ public class Application {
 
         String filePath = "c:/Users/rahin/online/customwriter/";
 
-        FileProcessor fileProcessor =
-                new FileProcessor(filePath, 42949672L, 1000);
+        FileWriterProcessor fileWriterProcessor =
+                new FileWriterProcessor(filePath, 42949672L, 1000);
 
         long end = System.currentTimeMillis();
 

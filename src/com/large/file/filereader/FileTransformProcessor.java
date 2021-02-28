@@ -21,18 +21,18 @@ public class FileTransformProcessor {
         Set<String> allFiles = this.fileNameReader.getAllFileNames();
         int numberOfProcessorToRun = allFiles.size();
         System.out.println(allFiles);
-        FileProcessor[] fileProcessors = new FileProcessor[numberOfProcessorToRun];
+        FileReaderProcessor[] fileReaderProcessors = new FileReaderProcessor[numberOfProcessorToRun];
 
         AtomicInteger fileCounter = new AtomicInteger();
 
         allFiles.forEach(fileName -> {
-            fileProcessors[fileCounter.getAndIncrement()] =
-                    new FileProcessor(fileName, this.sourcePath, this.destinationPath);
+            fileReaderProcessors[fileCounter.getAndIncrement()] =
+                    new FileReaderProcessor(fileName, this.sourcePath, this.destinationPath);
         });
 
         for (int i = 0; i < numberOfProcessorToRun; i++) {
             try {
-                fileProcessors[i].getThread().join();
+                fileReaderProcessors[i].getThread().join();
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }

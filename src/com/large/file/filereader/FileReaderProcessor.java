@@ -2,7 +2,7 @@ package com.large.file.filereader;
 
 import java.io.IOException;
 
-public class FileProcessor implements Runnable {
+public class FileReaderProcessor implements Runnable {
 
     private String fileName;
     private String fileSourcePath;
@@ -10,7 +10,7 @@ public class FileProcessor implements Runnable {
     private FileTransformer fileTransformer;
     private final Thread thread;
 
-    public FileProcessor(String fileName, String fileSourcePath, String fileDestinationPath) {
+    public FileReaderProcessor(String fileName, String fileSourcePath, String fileDestinationPath) {
         this.fileName = fileName;
         this.fileSourcePath = fileSourcePath;
         this.fileDestinationPath = fileDestinationPath;

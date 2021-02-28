@@ -1,12 +1,12 @@
 package com.large.file.cutomfilewriter;
 
-public class FileProcessor {
+public class FileWriterProcessor {
 
     private final Integer numberFileToGenerate;
     private final String filePath;
     private final Long numberOfCharacters;
 
-    public FileProcessor(String filePath, Long numberOfCharacters, Integer numberFileToGenerate) {
+    public FileWriterProcessor(String filePath, Long numberOfCharacters, Integer numberFileToGenerate) {
         this.numberFileToGenerate = numberFileToGenerate;
         this.filePath = filePath;
         this.numberOfCharacters = numberOfCharacters;

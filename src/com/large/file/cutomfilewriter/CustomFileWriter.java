@@ -3,23 +3,24 @@ package com.large.file.cutomfilewriter;
 import java.io.File;
 import java.io.FileWriter;
 import java.io.IOException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Map;
 import java.util.Random;
 import java.util.concurrent.ConcurrentHashMap;
 
-public class CustomFileWriter{
+public class CustomFileWriter {
 
     private String filePath;
     private Long numberOfCharacters;
-    private  String fileName;
+    private final String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss'.txt'").format(new Date());;
 
     public CustomFileWriter() {
     }
 
-    public CustomFileWriter(String filePath, String fileName,Long numberOfCharacters) {
+    public CustomFileWriter(String filePath, Long numberOfCharacters) {
         this.filePath = filePath;
         this.numberOfCharacters = numberOfCharacters;
-        this.fileName = fileName;
     }
 
     public synchronized void largeFileWriter() {
@@ -28,7 +29,7 @@ public class CustomFileWriter{
 
         Random random = new Random();
 
-        try (FileWriter fileWriter = new FileWriter(this.filePath +  this.fileName)) {
+        try (FileWriter fileWriter = new FileWriter(this.filePath + this.fileName)) {
 
             int charCounter = 0;
 

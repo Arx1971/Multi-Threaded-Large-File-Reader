@@ -1,6 +1,6 @@
 package com.large.file.cutomfilewriter;
 
-public class GenerateFile implements Runnable {
+public class FileGenerator implements Runnable {
 
     private final String filePath;
     private final Long numberOfCharacters;
@@ -8,7 +8,7 @@ public class GenerateFile implements Runnable {
     private Thread thread;
     private String threadName;
 
-    public GenerateFile(String filePath, String threadName, Long numberOfCharacters) {
+    public FileGenerator(String filePath, String threadName, Long numberOfCharacters) {
         this.filePath = filePath;
         this.numberOfCharacters = numberOfCharacters;
         thread = new Thread(this);
@@ -25,6 +25,5 @@ public class GenerateFile implements Runnable {
         synchronized (customFileWriter) {
             customFileWriter.largeFileWriter();
         }
-        //customFileWriter.largeFileWriter();
     }
 }

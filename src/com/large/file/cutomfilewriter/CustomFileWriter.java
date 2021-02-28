@@ -23,7 +23,7 @@ public class CustomFileWriter {
         this.numberOfCharacters = numberOfCharacters;
     }
 
-    public synchronized void largeFileWriter() {
+    public void largeFileWriter() {
 
         Map<Integer, Character> characterMap = loadAllLetters();
 

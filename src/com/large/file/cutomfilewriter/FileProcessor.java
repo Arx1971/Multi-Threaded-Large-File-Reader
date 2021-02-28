@@ -14,16 +14,13 @@ public class FileProcessor {
     }
 
     public void triggerFileProcessor() {
-        Thread[] threads = new Thread[this.numberFileToGenerate];
-        for (int i = 0; i < this.numberFileToGenerate; i++) {
-            GenerateFile generateFile = new GenerateFile(this.filePath, this.numberOfCharacters);
-            threads[i] = new Thread(generateFile);
-            threads[i].start();
-        }
-        for (int i = 0; i < this.numberFileToGenerate; i++) {
+        GenerateFile[] generateFiles = new GenerateFile[numberFileToGenerate];
+        for (int i = 0; i < numberFileToGenerate; i++) {
+            generateFiles[i] = new GenerateFile(filePath, numberOfCharacters);
             try {
-                threads[i].join();
-            } catch (Exception e) {
+                generateFiles[i].getThread().join();
+            } catch (InterruptedException e) {
+                System.out.println("Thread Is Interrupted Exception");
                 e.printStackTrace();
             }
         }

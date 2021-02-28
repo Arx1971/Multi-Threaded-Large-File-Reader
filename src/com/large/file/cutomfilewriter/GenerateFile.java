@@ -15,6 +15,10 @@ public class GenerateFile implements Runnable {
         thread.start();
     }
 
+    public Thread getThread() {
+        return thread;
+    }
+
     @Override
     public void run() {
         synchronized (customFileWriter) {

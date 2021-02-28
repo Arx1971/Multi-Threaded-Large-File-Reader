@@ -7,7 +7,7 @@ public class FileReaderProcessor implements Runnable {
     private String fileName;
     private String fileSourcePath;
     private String fileDestinationPath;
-    private FileTransformer fileTransformer;
+    private final FileTransformer fileTransformer;
     private final Thread thread;
 
     public FileReaderProcessor(String fileName, String fileSourcePath, String fileDestinationPath) {

@@ -1,13 +1,12 @@
 package com.large.file;
 
-import com.large.file.filereader.FileNameReader;
+import com.large.file.filereader.FileTransformProcessor;
 
-import java.io.FileNotFoundException;
-import java.util.Set;
+import java.io.IOException;
 
 public class Application {
 
-    public static void main(String[] args) throws FileNotFoundException {
+    public static void main(String[] args) throws IOException {
 
         long start = System.currentTimeMillis();
 
@@ -20,11 +19,17 @@ public class Application {
 
         double time = (end - start) / 1000.0;
 
-        System.out.println("Total Time to Execute " + time + " Seconds");*/
+        System.out.println("Total Time to Execute " + time + " Seconds");
 
         Set<String> fileNames = new FileNameReader(filePath).getAllFileNames();
 
-        System.out.println(fileNames);
+        System.out.println(fileNames);*/
+
+        FileTransformProcessor fileTransformProcessor = new FileTransformProcessor(filePath,
+                "c:/Users/rahin/online/output/",
+                "CustomFile-0-2021-02-28-02-29-17-285.txt");
+
+        fileTransformProcessor.fileTransformer();
 
     }
 

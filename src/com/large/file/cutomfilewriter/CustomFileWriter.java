@@ -13,7 +13,7 @@ public class CustomFileWriter {
 
     private String filePath;
     private Long numberOfCharacters;
-    private final String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss'.txt'").format(new Date());;
+    private final String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSS'.txt'").format(new Date());
 
     public CustomFileWriter() {
     }

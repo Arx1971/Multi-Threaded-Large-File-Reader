@@ -1,14 +1,14 @@
 package com.large.file;
 
-import com.large.file.cutomfilewriter.GenerateFile;
+import com.large.file.cutomfilewriter.FileProcessor;
 
 public class Application {
 
     public static void main(String[] args) {
         String filePath = "c:/Users/rahin/online/customwriter/";
-        GenerateFile generateFile =
-                new GenerateFile(filePath
-                        , 2000000L, 100);
+
+        FileProcessor fileProcessor =
+                new FileProcessor(filePath, 102030L, 100);
 
     }
 

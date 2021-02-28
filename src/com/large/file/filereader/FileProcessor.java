@@ -25,13 +25,11 @@ public class FileProcessor implements Runnable {
 
     @Override
     public void run() {
-
         try {
             fileTransformer.fileTransformer();
         } catch (IOException exception) {
             System.out.println("FILE TRANSFORMER IS BROKEN");
             exception.printStackTrace();
         }
-
     }
 }

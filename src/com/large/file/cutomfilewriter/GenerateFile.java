@@ -11,10 +11,9 @@ public class GenerateFile implements Runnable {
     public GenerateFile(String filePath, String threadName, Long numberOfCharacters) {
         this.filePath = filePath;
         this.numberOfCharacters = numberOfCharacters;
-        this.threadName = threadName;
-        this.customFileWriter = new CustomFileWriter(this.filePath, this.threadName, this.numberOfCharacters);
         thread = new Thread(this);
-        thread.start();
+        this.thread.setName(threadName);
+        this.customFileWriter = new CustomFileWriter(this.filePath, thread.getName(), this.numberOfCharacters);
     }
 
     public Thread getThread() {
@@ -23,9 +22,9 @@ public class GenerateFile implements Runnable {
 
     @Override
     public void run() {
-        /*synchronized (customFileWriter) {
+        synchronized (customFileWriter) {
             customFileWriter.largeFileWriter();
-        }*/
-        customFileWriter.largeFileWriter();
+        }
+        //customFileWriter.largeFileWriter();
     }
 }

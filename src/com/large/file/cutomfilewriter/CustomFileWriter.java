@@ -31,7 +31,9 @@ public class CustomFileWriter {
 
         Random random = new Random();
 
-        try (FileWriter fileWriter = new FileWriter(this.filePath + this.fileName)) {
+        try (FileWriter fileWriter = new FileWriter(this.filePath + "CustomFile-" + this.threadName + "-" + this.fileName)) {
+
+            System.out.println("CustomFile-" + this.threadName + "-" + this.fileName);
 
             int charCounter = 0;
 

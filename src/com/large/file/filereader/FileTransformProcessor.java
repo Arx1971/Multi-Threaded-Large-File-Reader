@@ -18,7 +18,7 @@ public class FileTransformProcessor {
 
         BufferedReader bufferedReader = null;
         BufferedWriter bufferedWriter = null;
-        
+
         try {
 
             bufferedReader = new BufferedReader(
@@ -39,7 +39,6 @@ public class FileTransformProcessor {
             assert bufferedReader != null;
             bufferedReader.close();
             bufferedWriter.close();
-
         }
 
     }

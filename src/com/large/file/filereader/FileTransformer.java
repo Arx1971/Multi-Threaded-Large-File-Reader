@@ -2,13 +2,13 @@ package com.large.file.filereader;
 
 import java.io.*;
 
-public class FileTransformProcessor {
+public class FileTransformer {
 
     private final String sourcePath;
     private final String destinationPath;
     private final String fileName;
 
-    public FileTransformProcessor(String sourcePath, String destinationPath, String fileName) {
+    public FileTransformer(String sourcePath, String destinationPath, String fileName) {
         this.sourcePath = sourcePath;
         this.destinationPath = destinationPath;
         this.fileName = fileName;
@@ -20,14 +20,13 @@ public class FileTransformProcessor {
         BufferedWriter bufferedWriter = null;
 
         try {
-
             bufferedReader = new BufferedReader(
                     new FileReader(sourcePath + fileName));
 
             bufferedWriter = new BufferedWriter(
                     new FileWriter(destinationPath + fileName));
 
-            String line = "";
+            String line;
             while ((line = bufferedReader.readLine()) != null) {
                 bufferedWriter.write(line);
                 bufferedWriter.write(System.lineSeparator());
@@ -38,9 +37,8 @@ public class FileTransformProcessor {
         }finally {
             assert bufferedReader != null;
             bufferedReader.close();
+            assert bufferedWriter != null;
             bufferedWriter.close();
         }
-
     }
-
 }

@@ -1,6 +1,6 @@
 package com.large.file;
 
-import com.large.file.filereader.FileTransformProcessor;
+import com.large.file.filereader.FileTransformer;
 
 import java.io.IOException;
 
@@ -25,11 +25,11 @@ public class Application {
 
         System.out.println(fileNames);*/
 
-        FileTransformProcessor fileTransformProcessor = new FileTransformProcessor(filePath,
+        FileTransformer fileTransformer = new FileTransformer(filePath,
                 "c:/Users/rahin/online/output/",
                 "CustomFile-0-2021-02-28-02-29-17-285.txt");
 
-        fileTransformProcessor.fileTransformer();
+        fileTransformer.fileTransformer();
 
     }
 

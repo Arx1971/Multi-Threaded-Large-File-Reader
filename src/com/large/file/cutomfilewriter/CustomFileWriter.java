@@ -14,13 +14,15 @@ public class CustomFileWriter {
     private String filePath;
     private Long numberOfCharacters;
     private final String fileName = new SimpleDateFormat("yyyy-MM-dd-HH-mm-ss-SSS'.txt'").format(new Date());
+    private String threadName;
 
     public CustomFileWriter() {
     }
 
-    public CustomFileWriter(String filePath, Long numberOfCharacters) {
+    public CustomFileWriter(String filePath, String threadName, Long numberOfCharacters) {
         this.filePath = filePath;
         this.numberOfCharacters = numberOfCharacters;
+        this.threadName = threadName;
     }
 
     public void largeFileWriter() {

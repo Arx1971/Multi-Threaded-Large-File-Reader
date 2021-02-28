@@ -16,7 +16,7 @@ public class FileProcessor {
     public void triggerFileProcessor() {
         GenerateFile[] generateFiles = new GenerateFile[numberFileToGenerate];
         for (int i = 0; i < numberFileToGenerate; i++) {
-            generateFiles[i] = new GenerateFile(filePath, numberOfCharacters);
+            generateFiles[i] = new GenerateFile(filePath, String.valueOf(i), numberOfCharacters);
             try {
                 generateFiles[i].getThread().join();
             } catch (InterruptedException e) {
